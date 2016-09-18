@@ -43,7 +43,7 @@ namespace wpfweldcontroller
       
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            canvas1.Visibility = System.Windows.Visibility.Visible;
+          
             canvas1.Visibility = System.Windows.Visibility.Hidden;
             canvas4.Visibility = System.Windows.Visibility.Visible;
         }
