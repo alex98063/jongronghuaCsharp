@@ -1,0 +1,86 @@
+﻿<Window x:Class="wpfweldcontroller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="焊接工艺实验系统" Height="600" Width="1200">
+    <Grid>
+        <Menu HorizontalAlignment="Stretch" Name="menu1" VerticalAlignment="Top" AllowDrop="False">
+            <MenuItem Header="文件">
+                <MenuItem Header="读入轨迹文件" Click="MenuItem_Click_2"/>
+                <MenuItem Header="退出" Click="MenuItem_Click_3"/>
+            </MenuItem>
+            <MenuItem Header="设置">
+                <MenuItem Header="预设参数" Click="MenuItem_Click_1"/>
+                <MenuItem Header="帮助" />
+            </MenuItem>
+        </Menu>
+        <Canvas HorizontalAlignment="Stretch" Margin="0,18,0,0" Name="canvas1" VerticalAlignment="Stretch" Visibility="Visible">
+            <Label Canvas.Left="24" Canvas.Top="19" Content="设置：" Height="30" Name="label1" />
+            <Label Canvas.Left="24" Canvas.Top="66" Content="轨底：" Height="30" Name="label2" />
+            <Label Canvas.Left="24" Canvas.Top="102" Content="三角区：" Height="30" Name="label3" />
+            <Label Canvas.Left="24" Canvas.Top="138" Content="轨腰：" Height="30" Name="label4" />
+            <Label Canvas.Left="24" Canvas.Top="174" Content="轨颚：" Height="30" Name="label5" />
+            <Label Canvas.Left="24" Canvas.Top="210" Content="轨头：" Height="30" Name="label6" />
+            <TextBox Canvas.Left="105" Canvas.Top="66" Height="22" Name="textBox1" Width="120" />
+            <TextBox Canvas.Left="105" Canvas.Top="102" Height="22" Name="textBox2" Width="120" />
+            <TextBox Canvas.Left="105" Canvas.Top="138" Height="22" Name="textBox3" Width="120" />
+            <TextBox Canvas.Left="105" Canvas.Top="174" Height="22" Name="textBox4" Width="120" />
+            <TextBox Canvas.Left="105" Canvas.Top="210" Height="22" Name="textBox5" Width="120" />
+            <Label Canvas.Left="24" Canvas.Top="330" Content="端口：" Height="30" Name="label7" />
+            <Label Canvas.Left="24" Canvas.Top="366" Content="波特率：" Height="30" Name="label8" />
+            <Label Canvas.Left="24" Canvas.Top="402" Content="命令：" Height="30" Name="label9" />
+            <Label Canvas.Left="24" Canvas.Top="294" Content="通讯参数：" Height="30" Name="label10" />
+            <TextBox Canvas.Left="105" Canvas.Top="402" Height="22" Name="textBox9" Width="120" Text="4EN" />
+            <Button Canvas.Left="24" Canvas.Top="454" Content="连接" Height="22" Name="button1" Width="75" Click="button1_Click" />
+            <Button Canvas.Left="150" Canvas.Top="454" Content="发送" Height="22" Name="button2" Width="75" Click="button2_Click" />
+            <Label Canvas.Left="305" Canvas.Top="19" Content="控制面板：" Height="30" Name="label11" />
+            <Button Canvas.Left="394" Canvas.Top="66" Content="上" Height="22" Name="button3" Width="75" Click="button3_Click" />
+            <Button Canvas.Left="394" Canvas.Top="110" Content="下" Height="22" Name="button4" Width="75" Click="button4_Click" />
+            <Button Canvas.Left="305" Canvas.Top="88" Content="前" Height="22" Name="button5" Width="75" Click="button5_Click" />
+            <Button Canvas.Left="486" Canvas.Top="88" Content="后" Height="22" Name="button6" Width="75" Click="button6_Click" />
+            <Button Canvas.Left="351" Canvas.Top="172" Content="左" Height="22" Name="button7" Width="75" Click="button7_Click" />
+            <Button Canvas.Left="432" Canvas.Top="172" Content="右" Height="22" Name="button8" Width="75" Click="button8_Click" />
+            <Button Canvas.Left="351" Canvas.Top="208" Content="顺" Height="22" Name="button9" Width="75" Click="button9_Click" />
+            <Button Canvas.Left="432" Canvas.Top="208" Content="逆" Height="22" Name="button10" Width="75" Click="button10_Click" />
+            <Button Canvas.Left="602" Canvas.Top="136" Content="确定" Height="22" Name="button11" Width="75" Click="button11_Click" />
+            <Button Canvas.Left="602" Canvas.Top="172" Content="停止" Height="22" Name="button12" Width="75" Click="button12_Click" />
+            <Button Canvas.Left="602" Canvas.Top="208" Content="夹紧" Height="22" Name="button13" Width="75" />
+            <Button Canvas.Left="709" Canvas.Top="21" Content="开" Height="22" Name="button14" Width="75" Click="button14_Click" />
+            <Button Canvas.Left="709" Canvas.Top="55" Content="复位" Height="22" Name="button15" Width="75" Click="button15_Click" />
+            <Button Canvas.Left="709" Canvas.Top="172" Content="降温" Height="22" Name="button16" Width="75" />
+            <Button Canvas.Left="709" Canvas.Top="208" Content="送丝" Height="22" Name="button17" Width="75" />
+            <Label Canvas.Left="305" Canvas.Top="294" Content="轨迹文件：" Height="28" Name="label13" />
+            <Label Canvas.Left="394" Canvas.Top="294" Height="28" Name="label14" />
+            <Button Canvas.Left="709" Canvas.Top="338" Content="运行" Height="22" Name="button18" Width="75" Click="button18_Click" />
+            <Canvas Canvas.Left="310" Canvas.Top="330" Height="146" Name="canvas2" Width="388" Background="Black" />
+            <Label Canvas.Left="844" Canvas.Top="19" Content="波形显示：" Height="28" Name="label15" />
+            <Canvas Canvas.Left="844" Canvas.Top="55" Height="421" Name="canvas3" Width="328" Background="Black" />
+            <ComboBox Canvas.Left="105" Canvas.Top="330" Height="23" Name="comboBox2" Width="120" SelectedIndex="2">
+                <ComboBoxItem Content="COM1" />
+                <ComboBoxItem Content="COM2" />
+                <ComboBoxItem Content="COM3" />
+                <ComboBoxItem Content="COM4" />
+            </ComboBox>
+            <ComboBox Canvas.Left="105" Canvas.Top="366" Height="23" Name="comboBox3" Width="120" SelectedIndex="0">
+                <ComboBoxItem Content="9600" />
+                <ComboBoxItem Content="19200" />
+            </ComboBox>
+        </Canvas>
+        <Canvas HorizontalAlignment="Stretch" Margin="0,18,0,0" Name="canvas4" VerticalAlignment="Stretch" Visibility="Hidden">
+            <Label Canvas.Left="17" Canvas.Top="21" Content="轨型：" Height="28" Name="label16" />
+            <Label Canvas.Left="17" Canvas.Top="55" Content="焊缝底宽：" Height="28" Name="label17" />
+            <ComboBox Canvas.Left="127" Canvas.Top="21" Height="23" Name="comboBox1" Width="120" SelectedIndex="0">
+                <ComboBoxItem Content="60" />
+                <ComboBoxItem Content="70" />
+            </ComboBox>
+            <Label Canvas.Left="17" Canvas.Top="89" Content="焊缝顶宽：" Height="28" Name="label18" />
+            <Label Canvas.Left="17" Canvas.Top="123" Content="焊丝曲率半径：" Height="28" Name="label19" />
+            <Label Canvas.Left="17" Canvas.Top="157" Content="环境温度：" Height="28" Name="label20" />
+            <TextBox Canvas.Left="127" Canvas.Top="55" Height="23" Name="textBox10" Width="120" />
+            <TextBox Canvas.Left="127" Canvas.Top="89" Height="23" Name="textBox11" Width="120" />
+            <TextBox Canvas.Left="127" Canvas.Top="123" Height="23" Name="textBox12" Width="120" />
+            <TextBox Canvas.Left="127" Canvas.Top="157" Height="23" Name="textBox13" Width="120" />
+            <Button Canvas.Left="17" Canvas.Top="211" Content="取消" Height="23" Name="button19" Width="75" Click="button19_Click"/>
+            <Button Canvas.Left="172" Canvas.Top="211" Content="确认" Height="23" Name="button20" Width="75" Click="button20_Click"/>
+        </Canvas>
+    </Grid>
+</Window>
